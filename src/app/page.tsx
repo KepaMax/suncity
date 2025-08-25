@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Footer from '../components/Footer';
-
+import { Icon } from "@iconify/react";
 export default function ItinerariPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     // Simple animation for header
@@ -29,56 +31,61 @@ export default function ItinerariPage() {
     }
   }, [isDrawerOpen]);
 
+  useEffect(() => {
+    // Handle scroll-based navbar visibility
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down - hide navbar
+        setIsNavbarVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        setIsNavbarVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
   return (
     <>
-      <header id="site_header" className="fixed h-16 top-0 inset-x-0 bg-zinc-700/90 px-4 py-2 z-50 flex justify-center -translate-y-full duration-500 transition-all">
-        <a href="/" className="h-full opacity-0 duration-150" style={{opacity: 1}}>
-          <Image className="h-full" src="https://www.francischiello.it/wp-content/uploads/2025/06/francischiello_logo_small.png" alt="Francischiello Logo" width={64} height={64} />
-        </a>
-        <div className="absolute left-4 top-2 h-12 grid gap-2 grid-flow-col">
-          <button 
-            onClick={toggleDrawer}
-            className="relative size-12 cursor-pointer text-white hover:text-gray-300 transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="absolute top-1 left-1 size-10 opacity-100">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <span className="hidden lg:block lg:ml-12 font-serif text-xl">menu</span>
-          </button>
-          <div className="w-24 text-lg uppercase flex justify-center items-center divide-x divide-white/50 my-auto">
-            <a href="/itinerari" className="px-4 text-white hover:text-white duration-100">
-              <span>It</span>
-            </a>
-            <a href="/en/itineraries" className="px-4 text-gray-300 hover:text-white duration-100">
-              <span>En</span>
-            </a>
-          </div>
-        </div>
-        <a href="tel:+390818789181" className="font-serif text-base text-white size-12 absolute right-4 top-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.1" stroke="currentColor" className="absolute top-2 left-2 size-8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+      <header id="site_header" className={`fixed h-8 top-0 inset-x-0 bg-[#BCB09C]/90 px-4 py-1 z-50 flex justify-end items-center transition-all duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+
+        <button
+          onClick={toggleDrawer}
+          className="relative size-8 cursor-pointer text-white hover:text-gray-300 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-        </a>
+        </button>
       </header>
 
       {/* Navigation Drawer */}
       <div className={`fixed inset-0 z-50 transition-opacity duration-300 ${isDrawerOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         {/* Backdrop */}
-        <div 
-          className="absolute inset-0 bg-black/50" 
+        <div
+          className="absolute inset-0 bg-black/50"
           onClick={toggleDrawer}
         ></div>
-        
+
         {/* Drawer */}
-        <div className={`absolute left-0 top-0 h-full w-full lg:w-[560px] bg-white transform transition-transform duration-300 ease-out ${isDrawerOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className={`absolute right-0 top-0 h-full w-full lg:w-[560px] bg-white transform transition-transform duration-300 ease-out ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           {/* Drawer Header */}
-          <div className="bg-zinc-700 h-16 flex items-center justify-between px-6">
+          <div className="bg-zinc-700 h-8 flex items-center justify-between px-6">
             <div className="flex items-center gap-4">
-              <button 
+              <button
                 onClick={toggleDrawer}
                 className="text-white hover:text-gray-300 transition-colors"
               >
@@ -95,7 +102,7 @@ export default function ItinerariPage() {
           </div>
 
           {/* Drawer Content */}
-          <div className="flex h-[calc(100%-4rem)]">
+          <div className="flex h-[calc(100%-2rem)]">
             {/* Navigation Links */}
             <div className="w-full lg:w-1/2 p-8">
               <nav className="space-y-6">
@@ -117,101 +124,100 @@ export default function ItinerariPage() {
             {/* Image Slider */}
             <div className="hidden lg:block w-1/2 bg-gray-100">
               <div className="h-full relative overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_home.webp" 
-                      alt="francischiello_menu_home" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_home.webp"
+                      alt="francischiello_menu_home"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_hotel.webp" 
-                      alt="francischiello_menu_hotel" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_hotel.webp"
+                      alt="francischiello_menu_hotel"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_rooms.webp" 
-                      alt="francischiello_menu_rooms" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_rooms.webp"
+                      alt="francischiello_menu_rooms"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_restaurant.webp" 
-                      alt="francischiello_menu_restaurant" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_restaurant.webp"
+                      alt="francischiello_menu_restaurant"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_pool.webp" 
-                      alt="francischiello_menu_pool" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_pool.webp"
+                      alt="francischiello_menu_pool"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_weddings.webp" 
-                      alt="francischiello_menu_weddings" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_weddings.webp"
+                      alt="francischiello_menu_weddings"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_benessere.webp" 
-                      alt="francischiello_menu_benessere" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_benessere.webp"
+                      alt="francischiello_menu_benessere"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_itinerari.webp" 
-                      alt="francischiello_menu_itinerari" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_itinerari.webp"
+                      alt="francischiello_menu_itinerari"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_offerte.webp" 
-                      alt="francischiello_menu_offerte" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_offerte.webp"
+                      alt="francischiello_menu_offerte"
+                      fill
                       className="object-cover"
                     />
                   </div>
                   <div className="min-w-full h-full">
-                    <Image 
-                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_contatti.webp" 
-                      alt="francischiello_menu_contatti" 
-                      fill 
+                    <Image
+                      src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_contatti.webp"
+                      alt="francischiello_menu_contatti"
+                      fill
                       className="object-cover"
                     />
                   </div>
                 </div>
-                
+
                 {/* Slide Indicators */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                   {Array.from({ length: 10 }, (_, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrentSlide(i)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
-                        i === currentSlide ? 'bg-white' : 'bg-white/50'
-                      }`}
+                      className={`w-2 h-2 rounded-full transition-colors ${i === currentSlide ? 'bg-white' : 'bg-white/50'
+                        }`}
                     />
                   ))}
                 </div>
@@ -221,38 +227,79 @@ export default function ItinerariPage() {
         </div>
       </div>
 
-      <main className="pt-16">
+      <main>
         <div className="relative h-screen">
-          <a href="/" className="absolute inset-x-0 top-24 z-10 mx-auto block w-fit">
-            <Image className="block w-16 mx-auto" src="https://www.francischiello.it/wp-content/uploads/2025/06/francischiello_logo_small.png" alt="Francischiello Logo" width={64} height={64} />
-            <div className="font-serif text-white text-center text-2xl mt-4 tracking-wide">Hotel Bellavista Francischiello</div>
-            <div className="font-serif text-white text-center text-base -mt-1 tracking-tight">HOTEL & SPA – Sorrento & Amalfi Coast</div>
+          <a href="/" className="absolute inset-x-0 top-11 z-10 mx-auto block w-fit">
+            <Image className="block mx-auto" src="/images/logo_small.png" alt="Francischiello Logo" width={471} height={247} />
           </a>
 
-          <Image className="object-cover" src="https://www.francischiello.it/wp-content/uploads/2025/07/francischiello_itinerari_top.webp" alt="francischiello_itinerari_top" fill />
+          <Image className="object-cover" src="/images/main.png" alt="francischiello_itinerari_top" fill />
           <div className="absolute inset-0 bg-black/20"></div>
 
           <div className="absolute inset-0 grid place-items-center text-center">
             <div className="text-white uppercase space-y-2 px-4">
-              <p className="text-2xl lg:text-5xl">Viaggio nella bellezza</p>
+              <p className="text-2xl lg:text-4xl">Sun City Hotel & Spa Naftalan, Naftalan</p>
               <div className="bg-white h-px w-64 mx-auto"></div>
-              <p className="text-lg">Una finestra su Capri.</p>
+              <p className="text-xl">Heading text</p>
             </div>
           </div>
-          
-          <div className="absolute bottom-20 w-fit inset-x-0 mx-auto flex flex-col items-center">
-            <p className="text-white font-serif text-lg">scroll down</p>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.2" stroke="currentColor" className="w-6 h-8 text-white">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
-            </svg>
+
+          <div className="absolute bottom-32 w-fit inset-x-0 mx-auto flex flex-col items-center">
+            <p className="text-white text-lg">scroll down</p>
+            <Icon icon="mynaui:arrow-long-down" className="w-10 h-20 text-white" />
           </div>
         </div>
 
-        <section className="relative mx-auto max-w-6xl bg-white py-12 px-4 space-y-8">
-          <header>
-            <h1 className="font-serif flex flex-col items-center text-center text-4xl uppercase tracking-wide">Itinerari</h1>
-          </header>
-          <p className="font-serif text-center text-lg">Il fascino di Massalubrense sta nella sua storia e nelle sue tradizioni, nelle sue profonde radici che si perdono nel mito e che la rendono famosa in tutto il mondo come Terra delle Sirene.</p>
+        {/* Hotel Branding Card - Bridge between sections */}
+        <div className="relative z-10 bg-white px-8 py-6 shadow-lg -mt-8 mb-16 w-1/3 mx-auto">
+          <div className="text-center">
+            <h2 className="text-[#BCB09C] text-3xl font-medium mb-2">Sun City Hotel & Spa Naftalan,</h2>
+            <h3 className="text-black text-3xl font-bold">Naftalan</h3>
+          </div>
+        </div>
+
+        {/* Sticky decorative strips on left and right */}
+        <div className="fixed left-0 top-0 w-8 h-full z-0 pointer-events-none">
+          <div className="w-full h-full bg-[#BCB09C]/10"></div>
+        </div>
+
+        <div className="fixed right-0 top-0 w-8 h-full z-0 pointer-events-none">
+          <div className="w-full h-full bg-[#BCB09C]/10"></div>
+        </div>
+
+        <section className="relative mx-8 py-20 px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 items-center max-w-7xl mx-auto">
+            {/* Left side - Hotel Image */}
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl lg:col-span-3">
+              <Image
+                src="/images/hotel-lobby.png"
+                alt="Sun City Hotel Lobby"
+                width={800}
+                height={700}
+                className="w-full h-auto object-cover rounded-2xl"
+              />
+            </div>
+
+            {/* Right side - Hotel Description */}
+            <div className="space-y-10 lg:col-span-2">
+              <h2 className="text-5xl font-bold text-[#BCB09C] leading-tight">
+                İstirahətiniz bizim peşəkarlığımızdır!
+              </h2>
+
+              <div className="space-y-8 text-gray-800">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-[#BCB09C] mt-3 flex-shrink-0"></div>
+                  <p className="text-lg leading-relaxed">
+                    "Sun City Hotel Spa Naftalan" 5 mərtəbəli binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir.
+                  </p>
+                </div>
+
+                <p className="text-lg leading-relaxed">
+                  Müalicə və sağlamlıq kompleksində müxtəlif kateqoriyalarda 95 otel otağı var. Müalicə əsasən Naftalan yağı ilə aparılır, əlavə olaraq fizioterapevtik prosedurlar tətbiq edilir. Bakıya (H. Əliyev Beynəlxalq Hava Limanı) - 340 km, Gəncə Hava Limanına - 50 km, Goran dəmir yolu stansiyasına - 20 km məsafədə yerləşir.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="mx-auto max-w-6xl bg-white px-4 mt-12">
@@ -322,7 +369,97 @@ export default function ItinerariPage() {
         </section>
       </main>
 
+      {/* Third Section - Restaurant */}
+      <section className="relative h-screen">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/restaurant-interior.png"
+            alt="Sun City Restaurant Interior"
+            fill
+            className="object-cover"
+          />
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="max-w-4xl mx-auto px-8">
+            <div className="bg-[#F5F5DC]/95 backdrop-blur-sm p-12 rounded-3xl shadow-2xl">
+              <p className="text-xl leading-relaxed text-gray-800 text-center">
+                SunCity Restoranı, həm Naftalan müalicəvi xüsusiyyətlərini nəzərə alan sağlam yeməkləri, həm də geniş çeşidli beynəlxalq menyusu ilə xidmətinizdədir. İsti və səmimi mühitdə, xüsusi günləninizi və gündəlik istirahətinizi dəyərləndirin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
+
+             {/* Sticky Booking Panel (Bottom) */}
+       <div className="fixed bottom-0 w-full left-0 right-0 z-50 bg-[#BCB09C]/95 backdrop-blur px-3 lg:px-8 py-3 lg:py-2 shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
+         <div className="flex justify-between w-full mx-auto gap-5">
+           {/* Arrival Date */}
+           <div className="w-1/4">
+             <div className="text-white  text-[10px]  mb-1 text-left">Gəliş tarixi</div>
+             <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
+               <div className="flex items-center text-white gap-2">
+                 <span className="text-4xl font-bold">2</span>
+                 <div className="flex flex-col">
+                   <p className='text-sm uppercase'>avqust 2025</p>
+                   <p className='text-xs'>12:00</p>
+                 </div>
+               </div>
+               <Image src="/calendar_icon.svg" alt="calendar" width={24} height={24} />
+             </div>
+           </div>
+           
+           {/* Departure Date */}
+           <div className="w-1/4">
+             <div className="text-white text-[10px] mb-1 text-left">Çıxış tarixi</div>
+             <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
+               <div className="flex items-center text-white gap-2">
+                 <span className="text-4xl font-bold">3</span>
+                 <div className="flex flex-col">
+                   <p className='text-sm uppercase'>avqust 2025</p>
+                   <p className='text-xs'>12:00</p>
+                 </div>
+               </div>
+               <Image src="/calendar_icon.svg" alt="calendar" width={24} height={24} />
+             </div>
+           </div>
+           
+           {/* Guests */}
+           <div className="w-1/4">
+             <div className="text-white text-[10px] mb-1 text-left">Qonaqlar</div>
+             <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
+               <div className="flex items-center text-white gap-2">
+                 <span className="text-4xl font-bold">2</span>
+                 <div className="flex flex-col">
+                   <p className='text-sm uppercase'>Böyük:</p>
+                   <p className='text-xs'>Uşaq:1</p>
+                 </div>
+               </div>
+               <Icon icon="mdi:chevron-down" className="w-6 h-6 text-white" />
+             </div>
+           </div>
+           
+           {/* Book Button */}
+           <div className="w-1/4">
+             <div className="h-6"></div> {/* Spacer to align with inputs */}
+             <div className="flex border border-[#F1F1F126] bg-white hover:bg-slate-200 transition-colors rounded-lg justify-center items-center px-3 py-2 gap-2 h-[52px]">
+               <span className="text-base font-bold">Rezervasiya et</span>
+             </div>
+             {/* Promo code link */}
+             <div className="flex justify-end mt-2">
+               <button className="flex items-center gap-2 text-white/90 text-xs hover:text-slate-200 transition-colors">
+                 <Image src="/promo_code_icon.svg" alt="promo_code" width={16} height={16} />
+                 <span>promo kod</span>
+               </button>
+             </div>
+           </div>
+         </div>
+       </div>
+
     </>
   );
 }

@@ -92,39 +92,46 @@
   --font-sans: 'Inter', var(--font-geist-sans);
   --font-serif: 'Playfair Display', serif;
   --font-mono: var(--font-geist-mono);
+  --font-cinzel: var(--font-cinzel);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Dark mode disabled - keeping light theme */
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: var(--font-cinzel), serif;
   margin: 0;
   padding: 0;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
+  display: none;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-brown);
-  border-radius: 4px;
+  background: transparent;
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-brown);
+  background: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+body {
+  -ms-overflow-style: none;
 }
 
 /* Smooth scrolling */
@@ -150,7 +157,7 @@ html {
 }
 
 /* Francischiello utility classes */
-.font-cinzel { font-family: 'Cinzel', serif; }
+.font-cinzel { font-family: var(--font-cinzel), serif; }
 .font-alegreya { font-family: 'Alegreya', serif; }
 .font-quicksand { font-family: 'Quicksand', sans-serif; }
 .font-cardo { font-family: 'Cardo', serif; }
