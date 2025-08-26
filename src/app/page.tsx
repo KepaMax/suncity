@@ -227,7 +227,7 @@ export default function ItinerariPage() {
         <div className="relative h-screen">
           <Link href="/" className="absolute inset-x-0 top-11 z-10 mx-auto block w-fit">
             <Image className="block mx-auto" src="/images/logo_small.png" alt="Francischiello Logo" width={471} height={247} />
-                      </Link>
+          </Link>
 
           <Image className="object-cover" src="/images/main.png" alt="francischiello_itinerari_top" fill />
           <div className="absolute inset-0 bg-black/20"></div>
@@ -481,7 +481,7 @@ export default function ItinerariPage() {
         {/* Left Container - Smaller with Image and Text */}
         <div className="absolute left-0 px-8 top-1/2 transform -translate-y-1/2 w-[55%] h-[514px] z-20">
           <div className="relative h-full p-6 bg-white">
-            <div className="bg-[#D2CDC3] p-8 shadow-2xl h-full">
+            <div className="bg-[#D2CDC3] p-8 h-full">
               <div className="grid grid-cols-2 gap-6 h-full">
                 {/* Left Column - Image */}
                 <div className="relative h-full">
@@ -506,7 +506,7 @@ export default function ItinerariPage() {
 
                 </div>
                 <div className="absolute  -bottom-3 right-1/2 translate-x-1/2">
-                  <button className="bg-white w-[100px] h-[100px] rounded-full shadow-lg flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <button className="bg-white w-[100px] h-[100px] rounded-full flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
                     <span className="text-base font-normal text-black mb-1">HOVUZ</span>
                     <svg className="w-5 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -533,7 +533,7 @@ export default function ItinerariPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/restaurant-interior.png"
+            src="/images/spa-background.png"
             alt="Sun City Restaurant Interior"
             fill
             className="object-cover"
@@ -541,33 +541,27 @@ export default function ItinerariPage() {
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="max-w-[85%] px-8 relative w-full">
+        <div className="relative z-10 h-full flex">
+          <div className="max-w-[85%] relative w-full">
             {/* Restaurant Name Card - Left Side */}
-            <div className="absolute w-[50%] top-1/2 h-[254px] left-4 transform -translate-y-1/2 z-30">
-              <div className="bg-white p-10 shadow-2xl px-20 border-gray-100 h-[80%] flex flex-col justify-center">
-                <h2 className="text-[32px] font-serif text-amber-800 mb-3 text-right leading-tight">
-                  SUNCITY HOTEL RESTORAN
-                </h2>
-                <p className="text-2xl font-serif text-black text-right leading-tight">
-                  NAFTALANIN LƏZZƏT MƏRKƏZİ
-                </p>
-              </div>
-            </div>
+
 
             {/* Description Card - Right Side */}
-            <div className="absolute right-4 w-[55%] top-1/2 transform -translate-y-1/2 z-20">
-              <div className="bg-[#D2CDC3] h-[254px] p-10 shadow-2xl border-gray-200 flex items-center">
-                <div className=" w-[30%] h-full"></div>
-                <p className="text-base leading-relaxed text-black text-left font-normal">
+            <div className="absolute w-[55%] top-26 transform z-20">
+              <div className="bg-white h-[254px] p-10 border-gray-200 flex flex-col items-center justify-center">
+                <p className="text-3xl font-normal text-[#C6BFB2] text-start w-full mb-4">
+                  Rahatlıq və Təravət Mərkəzi
+                </p>
+
+                <p className="text-base leading-relaxed text-[#C6BFB2] text-left font-normal">
                   SunCity Restoranı, həm Naftalan müalicəvi xüsusiyyətlərini nəzərə alan sağlam yeməkləri, həm də geniş çeşidli beynəlxalq menyusu ilə xidmətinizdədir. İsti və səmimi mühitdə, xüsusi günlənizi və gündəlik istirahətinizi dəyərləndirin.
                 </p>
               </div>
 
               {/* Circular Button - Bottom Right */}
               <div className="absolute -bottom-12 -right-12 z-30">
-                <button className="bg-white w-[147px] h-[147px] rounded-full shadow-2xl flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
-                  <span className="text-[22px] font-normal text-black mb-1">RESTORAN</span>
+                <button className="bg-white w-[120px] h-[120px] rounded-full shadow-2xl flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <span className="text-[20px] mt-4 font-normal text-black ">SPA</span>
                   <svg className="w-6 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
