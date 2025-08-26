@@ -117,19 +117,23 @@ export default function RootLayout({
           ></div>
 
           {/* Drawer */}
-          <div className={`absolute right-8 top-16 h-[calc(100%-8rem)] w-full lg:w-[560px] bg-white transform transition-transform duration-300 ease-out drawer-content shadow-2xl border border-gray-100 ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-
+          <div className={`absolute bg-white transform transition-transform duration-300 ease-out drawer-content shadow-2xl border border-gray-100 ${
+            isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+          } ${
+            // Responsive positioning and sizing - mobile: no top space, content-based height
+            'top-0 right-0 w-full h-auto max-h-full sm:top-4 sm:right-4 sm:w-[calc(100%-2rem)] sm:h-auto sm:max-h-[calc(100%-2rem)] md:top-16 md:right-6 md:w-[calc(100%-3rem)] md:h-[calc(100%-8rem)] lg:top-16 lg:right-8 lg:w-[560px] lg:h-[calc(100%-8rem)]'
+          }`}>
 
             {/* Drawer Content */}
-            <div className="flex h-full">
+            <div className="flex flex-col md:flex-row h-full">
               {/* Navigation Links */}
-              <div className="w-full lg:w-1/2 p-8">
-                <nav className="space-y-6">
+              <div className="w-full md:w-1/2 p-4 sm:p-6 lg:p-8">
+                <nav className="space-y-4 sm:space-y-6 text-center md:text-left">
                   {navigationItems.map((item, index) => (
                     <a
                       key={item.href}
                       href={item.href}
-                      className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors"
+                      className="block text-zinc-700 hover:text-zinc-900 text-lg sm:text-xl transition-colors"
                       onMouseEnter={() => handleNavigationHover(index)}
                     >
                       {item.label}
@@ -138,8 +142,8 @@ export default function RootLayout({
                 </nav>
               </div>
 
-              {/* Image Slider */}
-              <div className="hidden lg:block w-1/2 bg-gray-100">
+              {/* Image Slider - Hidden on small screens, visible on medium and large screens */}
+              <div className="hidden md:block w-1/2 bg-gray-100">
                 <div className="h-full relative overflow-hidden">
                   
                   <div
@@ -153,7 +157,7 @@ export default function RootLayout({
                           alt={item.label}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
                       </div>
                     ))}
