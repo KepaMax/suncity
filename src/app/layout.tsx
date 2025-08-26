@@ -13,6 +13,16 @@ const quicksand = Quicksand({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+// Define navigation items with their corresponding images
+const navigationItems = [
+  { href: "/", label: "Ana Səhifə", image: "/images/main.png" },
+  { href: "/hotel", label: "Hotel", image: "/images/hotel-lobby.png" },
+  { href: "/rooms", label: "Otaqlar", image: "/images/rooms-1-1.png" },
+  { href: "/services", label: "Xidmətlər", image: "/images/hotel_xidmetler.jpg" },
+  { href: "/contact", label: "Əlaqə", image: "/images/hotel_main.jpg" },
+  { href: "/reservation", label: "Rezervasiya", image: "/images/specialOffers-2.jpg" },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,17 +59,6 @@ export default function RootLayout({
     };
   }, [isDrawerOpen]);
 
-  // Auto-slide images when drawer is open
-  useEffect(() => {
-    if (isDrawerOpen) {
-      const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % 10); // 10 images total
-      }, 3000); // Change every 3 seconds
-
-      return () => clearInterval(interval);
-    }
-  }, [isDrawerOpen]);
-
   // Handle scroll-based navbar visibility
   useEffect(() => {
     const handleScroll = () => {
@@ -85,6 +84,10 @@ export default function RootLayout({
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
+  };
+
+  const handleNavigationHover = (index: number) => {
+    setCurrentSlide(index);
   };
 
   return (
@@ -136,115 +139,42 @@ export default function RootLayout({
               {/* Navigation Links */}
               <div className="w-full lg:w-1/2 p-8">
                 <nav className="space-y-6">
-                  <a href="/" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Ana Səhifə</a>
-                  <a href="/hotel" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Hotel</a>
-                  <a href="/rooms" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Otaqlar</a>
-                  <a href="/services" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Xidmətlər</a>
-                  <a href="/contact" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Əlaqə</a>
-                  <a href="/reservation" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Rezervasiya</a>
+                  {navigationItems.map((item, index) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors"
+                      onMouseEnter={() => handleNavigationHover(index)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
                 </nav>
               </div>
 
               {/* Image Slider */}
               <div className="hidden lg:block w-1/2 bg-gray-100">
                 <div className="h-full relative overflow-hidden">
+                  
                   <div
                     className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                   >
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_home.webp"
-                        alt="francischiello_menu_home"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_hotel.webp"
-                        alt="francischiello_menu_hotel"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_rooms.webp"
-                        alt="francischiello_menu_rooms"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_restaurant.webp"
-                        alt="francischiello_menu_restaurant"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_pool.webp"
-                        alt="francischiello_menu_pool"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_weddings.webp"
-                        alt="francischiello_menu_weddings"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_benessere.webp"
-                        alt="francischiello_menu_benessere"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_itinerari.webp"
-                        alt="francischiello_menu_itinerari"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_offerte.webp"
-                        alt="francischiello_menu_offerte"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-full h-full">
-                      <Image
-                        src="https://www.francischiello.it/wp-content/uploads/2025/08/francischiello_menu_contatti.webp"
-                        alt="francischiello_menu_contatti"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                    {navigationItems.map((item, index) => (
+                      <div key={index} className="w-full h-full flex-shrink-0 relative">
+                        <Image
+                          src={item.image}
+                          alt={item.label}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
+                      </div>
+                    ))}
                   </div>
 
                   {/* Slide Indicators */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                    {Array.from({ length: 10 }, (_, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setCurrentSlide(i)}
-                        className={`w-2 h-2 rounded-full transition-colors ${i === currentSlide ? 'bg-white' : 'bg-white/50'
-                          }`}
-                      />
-                    ))}
-                  </div>
+                 
                 </div>
               </div>
             </div>

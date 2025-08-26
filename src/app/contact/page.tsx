@@ -28,8 +28,7 @@ export default function ContactPage() {
 
   return (
     <>
-    
-
+  
       <div className="relative h-screen">
         <Link href="/" className="absolute inset-x-0 top-11 z-10 mx-auto block w-fit">
           <Image className="block mx-auto" src="/images/logo_small.png" alt="Francischiello Logo" width={471} height={247} />
