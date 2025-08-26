@@ -226,61 +226,46 @@ export default function ServicesPage() {
                 <div className="w-full h-full bg-[#BCB09C]/10"></div>
             </div>
 
-            <section className='relative h-screen bg-white py-20'>
+            <section className='relative h-screen bg-[#F8F8F8] py-20'>
                 <div className="max-w-[85%] mx-auto px-8">
-                    {/* Title Section */}
-                    <div className="flex items-center justify-between mb-16">
-                        <div className="flex items-center">
-                            <h2 className="text-4xl font-light text-[#BCB09C] mr-8">
-                                SPECIAL OFFERS
-                            </h2>
-                            <div className="flex-1 h-px bg-[#BCB09C]"></div>
-                            <div className="w-2 h-2 bg-[#BCB09C] rounded-full ml-4"></div>
-                        </div>
-
-                        {/* Navigation */}
-                        <div className="flex items-center gap-4">
-                            <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
-                            <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                            <div className="flex gap-2">
-                                <div className="w-2 h-2 bg-[#BCB09C] rounded-full"></div>
-                                <div className="w-2 h-2 border border-[#BCB09C] rounded-full"></div>
-                            </div>
-                        </div>
+                    <div className="grid relative grid-cols-3 gap-15 w ">
+                    <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-30">
+                    <div className="flex flex-col gap-2">
+                        <button className="w-12 h-12 bg-[#8B7355] rounded-full flex items-center justify-center  hover:bg-[#60470F] transition-colors duration-200">
+                            <Icon icon="mdi:arrow-left" className="w-5 h-5 text-white" />
+                        </button>
+                        <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center  hover:bg-gray-100 transition-colors duration-200 border border-[#ECE7DF]">
+                            <Icon icon="mdi:arrow-right" className="w-5 h-5 text-[#8B7355]" />
+                        </button>
                     </div>
-
-                    {/* Three Offer Cards */}
-                    <div className="grid grid-cols-3 gap-15 w ">
+                </div>
                         {/* Card 1: Open and Closed Pools */}
-                        <div className="relative">
+                        <div className="relative bg-[#ECE7DF] ">
                             {/* Image positioned above and to the left */}
                             <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
                                 <Image src="/images/specialOffers-1.jpg" alt="Sun City Pool" fill className="object-cover" />
                             </div>
 
                             {/* Text Card */}
-                            <div className="bg-white shadow-lg overflow-hidden">
-                                <div className='w-full h-[320px] bg-white'></div>
+                            <div className="bg-[#ECE7DF] shadow-lg overflow-hidden">
+                                <div className='w-full h-[320px] bg-[#ECE7DF]'></div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
-                                        AÇIQ VƏ QAPALI HOVUZLAR
-                                    </h3>
+                                    <div className="flex flex-col mb-2 justify-between">
+                                        <h3 className="text-xl font-bold text-[#60470F] mb-2">
+                                            AÇIQ VƏ QAPALI HOVUZLAR
+                                        </h3>
+                                        <div className="flex h-[1px] w-full bg-white relative">
+                                            <div className="absolute rounded-full bg-white w-[10px] h-[10px] right-2 -top-4"></div>
+                                        </div>
+                                    </div>
                                     <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
                                         A San Valentino regala un&apos;esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
                                     </p>
-                                    <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
-                                        <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
+                                    <div className=" flex w-full justify-center items-center px-4 py-2 border-[1px] border-white">
+                                        <span className="text-xl font-medium text-[#3A2C0C]">429,00 euro</span>
                                     </div>
-                                    <div className="bg-[#BCB09C] px-4 py-2 text-center">
-                                        <span className="text-white font-medium">Detaylı</span>
+                                    <div className=" border-[1px] border-white px-4 py-2 text-center">
+                                        <span className="text-[#3A2C0C] text-lg font-medium">Detaylı</span>
                                     </div>
                                 </div>
                             </div>
@@ -294,20 +279,25 @@ export default function ServicesPage() {
                             </div>
 
                             {/* Text Card */}
-                            <div className="bg-white shadow-lg overflow-hidden">
-                                <div className='w-full h-[320px] bg-white'></div>
+                            <div className="bg-[#ECE7DF] shadow-lg overflow-hidden">
+                                <div className='w-full h-[320px] bg-[#ECE7DF]'></div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
-                                        AÇIQ VƏ QAPALI HOVUZLAR
-                                    </h3>
+                                    <div className="flex flex-col mb-2 justify-between">
+                                        <h3 className="text-xl font-bold text-[#60470F] mb-2">
+                                            NAFTALAN VANNASI
+                                        </h3>
+                                        <div className="flex h-[1px] w-full bg-white relative">
+                                            <div className="absolute rounded-full bg-white w-[10px] h-[10px] right-2 -top-4"></div>
+                                        </div>
+                                    </div>
                                     <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
                                         A San Valentino regala un&apos;esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
                                     </p>
-                                    <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
-                                        <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
+                                    <div className=" flex w-full justify-center items-center px-4 py-2 border-[1px] border-white">
+                                        <span className="text-xl font-medium text-[#3A2C0C]">429,00 euro</span>
                                     </div>
-                                    <div className="bg-[#BCB09C] px-4 py-2 text-center">
-                                        <span className="text-white font-medium">Detaylı</span>
+                                    <div className=" border-[1px] border-white px-4 py-2 text-center">
+                                        <span className="text-[#3A2C0C] text-lg font-medium">Detaylı</span>
                                     </div>
                                 </div>
                             </div>
@@ -321,20 +311,25 @@ export default function ServicesPage() {
                             </div>
 
                             {/* Text Card */}
-                            <div className="bg-white shadow-lg overflow-hidden">
-                                <div className='w-full h-[320px] bg-white'></div>
+                            <div className="bg-[#ECE7DF] shadow-lg overflow-hidden">
+                                <div className='w-full h-[320px] bg-[#ECE7DF]'></div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
-                                        AÇIQ VƏ QAPALI HOVUZLAR
-                                    </h3>
+                                    <div className="flex flex-col mb-2 justify-between">
+                                        <h3 className="text-xl font-bold text-[#60470F] mb-2">
+                                            PARAFİN TERAPIYASI
+                                        </h3>
+                                        <div className="flex h-[1px] w-full bg-white relative">
+                                            <div className="absolute rounded-full bg-white w-[10px] h-[10px] right-2 -top-4"></div>
+                                        </div>
+                                    </div>
                                     <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
                                         A San Valentino regala un&apos;esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
                                     </p>
-                                    <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
-                                        <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
+                                    <div className=" flex w-full justify-center items-center px-4 py-2 border-[1px] border-white">
+                                        <span className="text-xl font-medium text-[#3A2C0C]">429,00 euro</span>
                                     </div>
-                                    <div className="bg-[#BCB09C] px-4 py-2 text-center">
-                                        <span className="text-white font-medium">Detaylı</span>
+                                    <div className=" border-[1px] border-white px-4 py-2 text-center">
+                                        <span className="text-[#3A2C0C] text-lg font-medium">Detaylı</span>
                                     </div>
                                 </div>
                             </div>
