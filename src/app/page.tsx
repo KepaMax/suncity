@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Footer from '../components/Footer';
 import { Icon } from "@iconify/react";
+
 export default function ItinerariPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -106,18 +108,12 @@ export default function ItinerariPage() {
             {/* Navigation Links */}
             <div className="w-full lg:w-1/2 p-8">
               <nav className="space-y-6">
-                <a href="/" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">HOME</a>
-                <a href="/hotel" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">HOTEL</a>
-                <a href="/camere" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">CAMERE</a>
-                <a href="/ristorante" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">RISTORANTE</a>
-                <a href="/piscina" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">PISCINA</a>
-                <a href="/cerimonie" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">CERIMONIE</a>
-                <a href="/benessere" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">BENESSERE</a>
-                <a href="/itinerari" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">ITINERARI</a>
-                <a href="/offerte-speciali" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">OFFERTE SPECIALI</a>
-                <a href="/contatti" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">CONTATTI</a>
-                <a href="/privacy-policy" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">PRIVACY</a>
-                <a href="/cookie-policy" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">COOKIE</a>
+                <Link href="/" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Ana Səhifə</Link>
+                <Link href="/hotel" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Hotel</Link>
+                <Link href="/rooms" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Otaqlar</Link>
+                <Link href="/services" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Xidmətlər</Link>
+                <Link href="/contact" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Əlaqə</Link>
+                <Link href="/reservation" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">Rezervasiya</Link>
               </nav>
             </div>
 
@@ -229,9 +225,9 @@ export default function ItinerariPage() {
 
       <main>
         <div className="relative h-screen">
-          <a href="/" className="absolute inset-x-0 top-11 z-10 mx-auto block w-fit">
+          <Link href="/" className="absolute inset-x-0 top-11 z-10 mx-auto block w-fit">
             <Image className="block mx-auto" src="/images/logo_small.png" alt="Francischiello Logo" width={471} height={247} />
-          </a>
+                      </Link>
 
           <Image className="object-cover" src="/images/main.png" alt="francischiello_itinerari_top" fill />
           <div className="absolute inset-0 bg-black/20"></div>
@@ -298,7 +294,7 @@ export default function ItinerariPage() {
               <div className=" text-gray-800">
                 <div className="flex items-start gap-3">
                   <p className="text-lg leading-relaxed">
-                    "Sun City Hotel Spa Naftalan" 5 mərtəbəli binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir.
+                    &ldquo;Sun City Hotel Spa Naftalan&rdquo; 5 mərtəbəli binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir.
                   </p>
                 </div>
 
@@ -481,7 +477,7 @@ export default function ItinerariPage() {
       </section>
 
       {/* Pool Section with Two Main Containers */}
-      <section className="relative h-[650px]">
+      <section className="relative mb-20 h-[650px]">
         {/* Left Container - Smaller with Image and Text */}
         <div className="absolute left-0 px-8 top-1/2 transform -translate-y-1/2 w-[55%] h-[514px] z-20">
           <div className="relative h-full p-6 bg-white">
@@ -581,7 +577,7 @@ export default function ItinerariPage() {
           </div>
         </div>
       </section>
-      
+
       <section className='relative h-screen bg-[#F8F8F8] py-20'>
         <div className="max-w-[85%] mx-auto px-8">
           {/* Title Section */}
@@ -593,17 +589,17 @@ export default function ItinerariPage() {
               <div className="flex-1 h-px bg-[#BCB09C]"></div>
               <div className="w-2 h-2 bg-[#BCB09C] rounded-full ml-4"></div>
             </div>
-            
+
             {/* Navigation */}
             <div className="flex items-center gap-4">
               <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
               <div className="flex gap-2">
@@ -619,20 +615,18 @@ export default function ItinerariPage() {
             <div className="relative">
               {/* Image positioned above and to the left */}
               <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
-                <div className="w-full h-full bg-gradient-to-br from-blue-200 to-green-200 shadow-lg flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Pool Image</span>
-                </div>
+                <Image src="/images/specialOffers-1.jpg" alt="Sun City Pool" fill className="object-cover" />
               </div>
-              
+
               {/* Text Card */}
               <div className="bg-white shadow-lg overflow-hidden">
-              <div className='w-full h-[320px] bg-white'></div>
+                <div className='w-full h-[320px] bg-white'></div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
                     AÇIQ VƏ QAPALI HOVUZLAR
                   </h3>
                   <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
-                    A San Valentino regala un'esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
+                    A San Valentino regala un&apos;esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
                   </p>
                   <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
                     <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
@@ -648,20 +642,18 @@ export default function ItinerariPage() {
             <div className="relative">
               {/* Image positioned above and to the left */}
               <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
-                <div className="w-full h-full bg-gradient-to-br from-blue-200 to-green-200 shadow-lg flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Pool Image</span>
-                </div>
+                <Image src="/images/specialOffers-2.jpg" alt="Sun City Pool" fill className="object-cover" />
               </div>
-              
+
               {/* Text Card */}
               <div className="bg-white shadow-lg overflow-hidden">
-              <div className='w-full h-[320px] bg-white'></div>
+                <div className='w-full h-[320px] bg-white'></div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
                     AÇIQ VƏ QAPALI HOVUZLAR
                   </h3>
                   <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
-                    A San Valentino regala un'esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
+                    A San Valentino regala un&apos;esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
                   </p>
                   <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
                     <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
@@ -677,20 +669,18 @@ export default function ItinerariPage() {
             <div className="relative">
               {/* Image positioned above and to the left */}
               <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
-                <div className="w-full h-full bg-gradient-to-br from-blue-200 to-green-200 shadow-lg flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Pool Image</span>
-                </div>
+                <Image src="/images/specialOffers-3.jpg" alt="Sun City Pool" fill className="object-cover" />
               </div>
-              
+
               {/* Text Card */}
               <div className="bg-white shadow-lg overflow-hidden">
-              <div className='w-full h-[320px] bg-white'></div>
+                <div className='w-full h-[320px] bg-white'></div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
                     AÇIQ VƏ QAPALI HOVUZLAR
                   </h3>
                   <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
-                    A San Valentino regala un'esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
+                    A San Valentino regala un&apos;esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
                   </p>
                   <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
                     <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
@@ -704,7 +694,7 @@ export default function ItinerariPage() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer className='mb-26' />
 
       {/* Sticky Booking Panel (Bottom) */}
       <div className="fixed bottom-0 w-full left-0 mt-10 right-0 z-50 bg-[#BCB09C]/95 backdrop-blur px-3 lg:px-8 py-3 lg:py-2 shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">

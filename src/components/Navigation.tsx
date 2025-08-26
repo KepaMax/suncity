@@ -13,7 +13,6 @@ interface NavigationProps {
 export default function Navigation({ logo, logoText = "LOGO" }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const activeSection = useActiveSection();
-  const isRoomsPage = typeof window !== 'undefined' && window.location.pathname === '/rooms';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,14 +20,6 @@ export default function Navigation({ logo, logoText = "LOGO" }: NavigationProps)
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    closeMenu();
   };
 
   return (
@@ -43,36 +34,15 @@ export default function Navigation({ logo, logoText = "LOGO" }: NavigationProps)
       
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center space-x-8">
-        {isRoomsPage ? (
+        {navigationItems.map((item) => (
           <Link
-            href="/"
+            key={item.id}
+            href={item.href}
             className="text-white hover:text-[#8B7355] transition-colors duration-300 font-semibold"
           >
-            ← Ana Səhifəyə Qayıt
+            {item.label}
           </Link>
-        ) : (
-          navigationItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                if (item.href === '/rooms') {
-                  window.location.href = '/rooms';
-                } else {
-                  scrollToSection(item.href);
-                }
-              }}
-              className={`transition-colors duration-300 ${
-                activeSection === item.id
-                  ? 'text-[#8B7355] font-semibold'
-                  : 'text-white hover:text-[#8B7355]'
-              }`}
-            >
-              {item.label}
-            </a>
-          ))
-        )}
+        ))}
       </div>
 
       {/* Mobile Menu Button */}
@@ -92,36 +62,16 @@ export default function Navigation({ logo, logoText = "LOGO" }: NavigationProps)
       {isMenuOpen && (
         <div className="absolute top-16 left-0 right-0 bg-[#2C2C2C] shadow-lg md:hidden">
           <div className="flex flex-col space-y-0">
-            {isRoomsPage ? (
+            {navigationItems.map((item) => (
               <Link 
-                href="/"
+                key={item.id}
+                href={item.href}
+                onClick={closeMenu}
                 className="px-6 py-4 text-white hover:bg-[#8B7355] transition-colors duration-300"
               >
-                ← Ana Səhifəyə Qayıt
+                {item.label}
               </Link>
-            ) : (
-              navigationItems.map((item) => (
-                <a 
-                  key={item.id}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (item.href === '/rooms') {
-                      window.location.href = '/rooms';
-                    } else {
-                      scrollToSection(item.href);
-                    }
-                  }}
-                  className={`px-6 py-4 transition-colors duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-[#8B7355] text-white'
-                      : 'text-white hover:bg-[#8B7355]'
-                  }`}
-                >
-                  {item.label}
-                </a>
-              ))
-            )}
+            ))}
           </div>
         </div>
       )}

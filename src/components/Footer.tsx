@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Footer() {
+export default function Footer(props: { className?: string }) {
   return (
-    <footer className="mb-26">
+    <footer className={`${props.className}`}>
       {/* Main Footer Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[400px]">
         {/* Left Section - Contact Information */}

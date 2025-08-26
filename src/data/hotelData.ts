@@ -77,10 +77,10 @@ export const poolSectionData: PoolSectionData = {
 };
 
 export const navigationItems = [
-  { id: 'home', label: 'Ana Səhifə', href: '#home' },
-  { id: 'about', label: 'Haqqımızda', href: '#about' },
-  { id: 'amenities', label: 'Təchizatlar', href: '#amenities' },
-  { id: 'services', label: 'Xidmətlər', href: '#services' },
+  { id: 'home', label: 'Ana Səhifə', href: '/' },
+  { id: 'hotel', label: 'Hotel', href: '/hotel' },
   { id: 'rooms', label: 'Otaqlar', href: '/rooms' },
-  { id: 'contact', label: 'Əlaqə', href: '#contact' }
+  { id: 'services', label: 'Xidmətlər', href: '/services' },
+  { id: 'contact', label: 'Əlaqə', href: '/contact' },
+  { id: 'reservation', label: 'Rezervasiya', href: '/reservation' }
 ];
