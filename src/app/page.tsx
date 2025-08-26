@@ -270,27 +270,29 @@ export default function ItinerariPage() {
         <section className="relative mx-8 py-20 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 items-center max-w-7xl mx-auto">
             {/* Left side - Hotel Image */}
-            <div className="relative overflow-hidden  shadow-2xl lg:col-span-3">
+            <div className="relative shadow-2xl lg:col-span-3">
               <Image
                 src="/images/hotel-lobby.png"
                 alt="Sun City Hotel Lobby"
-                width={800}
-                height={700}
+                width={1100}
+                height={740}
                 className="w-full h-auto object-cover"
               />
             </div>
 
             {/* Right side - Hotel Description */}
-            <div className="space-y-10 lg:col-span-2">
+            <div className=" lg:col-span-2">
               <div className="flex items-end justify-end flex-col">
-                <h2 className="text-3xl font-regular w-full text-[#3A2C0C]">
+                <h2 className="text-3xl mb-5 font-regular w-full text-[#3A2C0C]">
                   İstirahətiniz bizim peşəkarlığımızdır!
                 </h2>
 {/* 
                 <div className='flex-row justify-center items-end bg-green-400 w-full'>
                   <div className="w-2 h-2 rounded-full bg-[#BCB09C] mt-3 flex-shrink-0"></div>
                 </div> */}
-                <div className="bg-zinc-700 mt-2 h-px w-full"></div>
+                <div className="bg-zinc-700 relative my-5 mt-2 h-px w-full">
+                  <div className="absolute w-2 h-2 rounded-full bg-[#BCB09C] flex-shrink-0 -top-8 right-0"></div>
+                </div>
               </div>
 
               <div className=" text-gray-800">
@@ -375,7 +377,6 @@ export default function ItinerariPage() {
         </section>
       </main>
 
-      {/* Third Section - Restaurant */}
       <section className="relative h-screen">
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -389,13 +390,45 @@ export default function ItinerariPage() {
 
         {/* Content Overlay */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="max-w-4xl mx-auto px-8">
-            <div className="bg-[#F5F5DC]/95 backdrop-blur-sm p-12 rounded-3xl shadow-2xl">
-              <p className="text-xl leading-relaxed text-gray-800 text-center">
-                SunCity Restoranı, həm Naftalan müalicəvi xüsusiyyətlərini nəzərə alan sağlam yeməkləri, həm də geniş çeşidli beynəlxalq menyusu ilə xidmətinizdədir. İsti və səmimi mühitdə, xüsusi günləninizi və gündəlik istirahətinizi dəyərləndirin.
-              </p>
+          <div className="max-w-[85%] px-8 relative w-full">
+            {/* Restaurant Name Card - Left Side */}
+            <div className="absolute w-[50%] top-1/2 h-[254px] left-4 transform -translate-y-1/2 z-30">
+              <div className="bg-white p-10 shadow-2xl px-20 border-gray-100 h-[80%] flex flex-col justify-center">
+                <h2 className="text-[32px] font-serif text-amber-800 mb-3 text-right leading-tight">
+                  SUNCITY HOTEL RESTORAN
+                </h2>
+                <p className="text-2xl font-serif text-black text-right leading-tight">
+                  NAFTALANIN LƏZZƏT MƏRKƏZİ
+                </p>
+              </div>
+            </div>
+
+            {/* Description Card - Right Side */}
+            <div className="absolute right-4 w-[55%] top-1/2 transform -translate-y-1/2 z-20">
+              <div className="bg-[#D2CDC3] h-[254px] p-10 shadow-2xl border-gray-200 flex items-center">
+                <div className=" w-[30%] h-full"></div>
+                <p className="text-base leading-relaxed text-black text-left font-normal">
+                  SunCity Restoranı, həm Naftalan müalicəvi xüsusiyyətlərini nəzərə alan sağlam yeməkləri, həm də geniş çeşidli beynəlxalq menyusu ilə xidmətinizdədir. İsti və səmimi mühitdə, xüsusi günlənizi və gündəlik istirahətinizi dəyərləndirin.
+                </p>
+              </div>
+              
+              {/* Circular Button - Bottom Right */}
+              <div className="absolute -bottom-12 -right-12 z-30">
+                <button className="bg-white w-[147px] h-[147px] rounded-full shadow-2xl flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <span className="text-[22px] font-normal text-black mb-1">RESTORAN</span>
+                  <svg className="w-6 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="relative w-full"> 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
+          
         </div>
       </section>
 
