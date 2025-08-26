@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer(props: { className?: string }) {
   return (
@@ -36,14 +38,16 @@ export default function Footer(props: { className?: string }) {
         {/* Middle Section - Logo and Social Media */}
         <div className="bg-[#8B7355] p-8 flex flex-col items-center justify-center text-white">
           <div className="text-center mb-6">
-            {/* Sunburst Icon */}
-            <div className="w-16 h-16 mx-auto mb-4">
-              <svg viewBox="0 0 64 64" fill="currentColor" className="w-full h-full">
-                <path d="M32 0c-2.1 0-4.2 0.4-6.2 1.2C19.8 4.4 12.4 11.8 9.2 25.8C8.4 27.8 8 29.9 8 32s0.4 4.2 1.2 6.2C12.4 52.2 19.8 59.6 25.8 62.8C27.8 63.6 29.9 64 32 64s4.2-0.4 6.2-1.2C44.2 59.6 51.6 52.2 54.8 38.2C55.6 36.2 56 34.1 56 32s-0.4-4.2-1.2-6.2C51.6 11.8 44.2 4.4 38.2 1.2C36.2 0.4 34.1 0 32 0zM32 56c-1.8 0-3.6-0.3-5.3-0.9C22.4 53.2 16.8 47.6 14.9 37.3C14.3 35.6 14 33.8 14 32s0.3-3.6 0.9-5.3C16.8 16.4 22.4 10.8 26.7 8.9C28.4 8.3 30.2 8 32 8s3.6 0.3 5.3 0.9C41.6 10.8 47.2 16.4 49.1 26.7C49.7 28.4 50 30.2 50 32s-0.3 3.6-0.9 5.3C47.2 47.6 41.6 53.2 37.3 55.1C35.6 55.7 33.8 56 32 56z"/>
-                <path d="M32 16c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm0 24c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
-              </svg>
+            {/* Logo */}
+            <div className="mx-auto mb-4">
+              <Image 
+                src="/images/logo_small.png" 
+                alt="Suncity Hotel Logo" 
+                width={250} 
+                height={250}
+                className="w-full h-full object-contain"
+              />
             </div>
-            <h2 className="text-2xl font-bold mb-2">SUNCITY HOTEL & SPA NAFTALAN</h2>
           </div>
           
           <div className="text-center mb-8">
@@ -86,19 +90,19 @@ export default function Footer(props: { className?: string }) {
         <div className="bg-[#F5F5DC] p-8 flex flex-col justify-center">
           <div className="grid grid-cols-3 gap-4 text-center">
             <div className="space-y-4">
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">ANA SƏHİFƏ</a>
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">HAQQIMIZDA</a>
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">ƏLAQƏ</a>
+              <Link href="/" className="block text-gray-700 hover:text-[#8B7355] transition-colors">ANA SƏHİFƏ</Link>
+              <Link href="/hotel" className="block text-gray-700 hover:text-[#8B7355] transition-colors">HAQQIMIZDA</Link>
+              <Link href="/contact" className="block text-gray-700 hover:text-[#8B7355] transition-colors">ƏLAQƏ</Link>
             </div>
             <div className="space-y-4">
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">RESTORAN</a>
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">SPA</a>
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">HOVUZ & HOTEL</a>
+              <Link href="/services" className="block text-gray-700 hover:text-[#8B7355] transition-colors">RESTORAN</Link>
+              <Link href="/services" className="block text-gray-700 hover:text-[#8B7355] transition-colors">SPA</Link>
+              <Link href="/services" className="block text-gray-700 hover:text-[#8B7355] transition-colors">HOVUZ & HOTEL</Link>
             </div>
             <div className="space-y-4">
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">XİDMƏTLƏR</a>
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">OTAQLAR</a>
-              <a href="#" className="block text-gray-700 hover:text-[#8B7355] transition-colors">RESERVASİYA</a>
+              <Link href="/services" className="block text-gray-700 hover:text-[#8B7355] transition-colors">XİDMƏTLƏR</Link>
+              <Link href="/rooms" className="block text-gray-700 hover:text-[#8B7355] transition-colors">OTAQLAR</Link>
+              <Link href="/reservation" className="block text-gray-700 hover:text-[#8B7355] transition-colors">RESERVASİYA</Link>
             </div>
           </div>
         </div>
