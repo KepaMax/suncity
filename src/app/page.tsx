@@ -286,7 +286,7 @@ export default function ItinerariPage() {
                 <h2 className="text-3xl mb-5 font-regular w-full text-[#3A2C0C]">
                   İstirahətiniz bizim peşəkarlığımızdır!
                 </h2>
-{/* 
+                {/* 
                 <div className='flex-row justify-center items-end bg-green-400 w-full'>
                   <div className="w-2 h-2 rounded-full bg-[#BCB09C] mt-3 flex-shrink-0"></div>
                 </div> */}
@@ -310,7 +310,7 @@ export default function ItinerariPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl bg-white px-4 mt-12">
+        {/* <section className="mx-auto max-w-6xl bg-white px-4 mt-12">
           <p className="text-lg">La posizione particolarmente felice, adagiata sul promontorio estremo della penisola che si protende verso Capri, esattamente al centro tra le due costiere, Sorrentina e Amalfitana, ne fa il centro ideale di una vacanza dedicata a scoprire tutte le località e tutti gli aspetti di questo territorio ricco di attrattive.</p>
         </section>
 
@@ -374,9 +374,10 @@ export default function ItinerariPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
+      {/* Restaurant Section */}
       <section className="relative h-screen">
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -411,7 +412,7 @@ export default function ItinerariPage() {
                   SunCity Restoranı, həm Naftalan müalicəvi xüsusiyyətlərini nəzərə alan sağlam yeməkləri, həm də geniş çeşidli beynəlxalq menyusu ilə xidmətinizdədir. İsti və səmimi mühitdə, xüsusi günlənizi və gündəlik istirahətinizi dəyərləndirin.
                 </p>
               </div>
-              
+
               {/* Circular Button - Bottom Right */}
               <div className="absolute -bottom-12 -right-12 z-30">
                 <button className="bg-white w-[147px] h-[147px] rounded-full shadow-2xl flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
@@ -426,12 +427,283 @@ export default function ItinerariPage() {
         </div>
       </section>
 
-      <section className="relative w-full"> 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
-          
+      {/* Restaurant Experience Section */}
+      <section className="relative w-full bg-white py-20">
+        <div className="max-w-7xl mx-auto px-8">
+          {/* Title Section */}
+          <div className="flex relative items-end mb-8 w-[80%]">
+            <h2 className="text-3xl font-light text-[#BCB09C] mr-8">
+              Unudulmaz Dadlar Təcrübəsi
+            </h2>
+            <div className="flex-1 h-px bg-[#514639]"></div>
+            <div className="absolute top-1 right-0 w-2 h-2 bg-[#C6BFB2] rounded-full ml-4"></div>
+          </div>
+
+          {/* Content Blocks */}
+          <div className="grid grid-cols-4 gap-16">
+            {/* Left Text Block */}
+            <div className="col-span-1">
+              <p className="text-sm text-[#3A2C0C] leading-relaxed">
+                Hər zövqə uyğun, təzə və keyfiyyətli məhsullardan hazırlanmış yeməklər sizi gözləyir. Peşəkar aşpaz komandamız ənənəvi və müasir dadları bir araya gətirir.
+              </p>
+            </div>
+
+            {/* Middle Text Block */}
+            <div className="col-span-1">
+              <p className="text-sm text-[#3A2C0C] leading-relaxed">
+                Geniş və rahat məkanımız, müasir dizayn elementləri ilə bəzədilmişdir. Dostlarla görüşmək, ailə ilə vaxt keçirmək və ya xüsusi günlərinizi qeyd etmək üçün ideal yerdir.
+              </p>
+            </div>
+
+            {/* Right Text Block */}
+            <div className="col-span-1">
+              <p className="text-sm text-[#3A2C0C] leading-relaxed">
+                Müştəri məmnuniyyəti bizim üçün önəmlidir. Səmimi və diqqətli xidmət heyətimiz hər an sizin rahatlığınızı təmin etmək üçün hazırdır.
+              </p>
+            </div>
+
+            {/* Circular Button with Arrow */}
+            <div className="col-span-1 flex items-center justify-center">
+              <div className="relative">
+                <button className="bg-[#C6BFB2] w-[90px] h-[90px] rounded-full flex flex-col items-center justify-center hover:bg-gray-300 transition-all duration-300 group">
+                  <span className="text-lg font-normal text-white">Menyu</span>
+                </button>
+                {/* Arrow extending from button */}
+                <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-full">
+                  <svg className="w-16 h-4 text-[#C6BFB2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* Pool Section with Two Main Containers */}
+      <section className="relative h-[650px]">
+        {/* Left Container - Smaller with Image and Text */}
+        <div className="absolute left-0 px-8 top-1/2 transform -translate-y-1/2 w-[55%] h-[514px] z-20">
+          <div className="relative h-full p-6 bg-white">
+            <div className="bg-[#D2CDC3] p-8 shadow-2xl h-full">
+              <div className="grid grid-cols-2 gap-6 h-full">
+                {/* Left Column - Image */}
+                <div className="relative h-full">
+                  <Image
+                    src="/images/pool-2.jpg"
+                    alt="Sun City Pool"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Right Column - Text and Button */}
+                <div className="relative flex flex-col justify-center items-center p-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#514639] mb-4">
+                      Sərinləyici və Təmiz Hovuz
+                    </h3>
+                    <p className="text-base text-[#514639] leading-relaxed">
+                      SunCity Restoranının həyətində yerləşən hovuz, təmiz suyu və müntəzəm baxımı ilə rahatlıq və sərinlik bəxş edir. İstər istirahət, istər isə əyləncə üçün ideal məkan.
+                    </p>
+                  </div>
+
+                </div>
+                <div className="absolute  -bottom-3 right-1/2 translate-x-1/2">
+                  <button className="bg-white w-[100px] h-[100px] rounded-full shadow-lg flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
+                    <span className="text-base font-normal text-black mb-1">HOVUZ</span>
+                    <svg className="w-5 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Container - Larger Image */}
+        <div className="absolute right-8 top-0 w-[50%] h-full z-10">
+          <Image
+            src="/images/pool-image.jpg"
+            alt="Sun City Naftalan Hotel"
+            fill
+            className="object-cover"
+          />
+
+        </div>
+      </section>
+      <section className="relative h-screen">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/restaurant-interior.png"
+            alt="Sun City Restaurant Interior"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="max-w-[85%] px-8 relative w-full">
+            {/* Restaurant Name Card - Left Side */}
+            <div className="absolute w-[50%] top-1/2 h-[254px] left-4 transform -translate-y-1/2 z-30">
+              <div className="bg-white p-10 shadow-2xl px-20 border-gray-100 h-[80%] flex flex-col justify-center">
+                <h2 className="text-[32px] font-serif text-amber-800 mb-3 text-right leading-tight">
+                  SUNCITY HOTEL RESTORAN
+                </h2>
+                <p className="text-2xl font-serif text-black text-right leading-tight">
+                  NAFTALANIN LƏZZƏT MƏRKƏZİ
+                </p>
+              </div>
+            </div>
+
+            {/* Description Card - Right Side */}
+            <div className="absolute right-4 w-[55%] top-1/2 transform -translate-y-1/2 z-20">
+              <div className="bg-[#D2CDC3] h-[254px] p-10 shadow-2xl border-gray-200 flex items-center">
+                <div className=" w-[30%] h-full"></div>
+                <p className="text-base leading-relaxed text-black text-left font-normal">
+                  SunCity Restoranı, həm Naftalan müalicəvi xüsusiyyətlərini nəzərə alan sağlam yeməkləri, həm də geniş çeşidli beynəlxalq menyusu ilə xidmətinizdədir. İsti və səmimi mühitdə, xüsusi günlənizi və gündəlik istirahətinizi dəyərləndirin.
+                </p>
+              </div>
+
+              {/* Circular Button - Bottom Right */}
+              <div className="absolute -bottom-12 -right-12 z-30">
+                <button className="bg-white w-[147px] h-[147px] rounded-full shadow-2xl flex flex-col items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <span className="text-[22px] font-normal text-black mb-1">RESTORAN</span>
+                  <svg className="w-6 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className='relative h-screen bg-[#F8F8F8] py-20'>
+        <div className="max-w-[85%] mx-auto px-8">
+          {/* Title Section */}
+          <div className="flex items-center justify-between mb-16">
+            <div className="flex items-center">
+              <h2 className="text-4xl font-light text-[#BCB09C] mr-8">
+                SPECIAL OFFERS
+              </h2>
+              <div className="flex-1 h-px bg-[#BCB09C]"></div>
+              <div className="w-2 h-2 bg-[#BCB09C] rounded-full ml-4"></div>
+            </div>
+            
+            {/* Navigation */}
+            <div className="flex items-center gap-4">
+              <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+                </svg>
+              </button>
+              <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div className="flex gap-2">
+                <div className="w-2 h-2 bg-[#BCB09C] rounded-full"></div>
+                <div className="w-2 h-2 border border-[#BCB09C] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Three Offer Cards */}
+          <div className="grid grid-cols-3 gap-15 w ">
+            {/* Card 1: Open and Closed Pools */}
+            <div className="relative">
+              {/* Image positioned above and to the left */}
+              <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
+                <div className="w-full h-full bg-gradient-to-br from-blue-200 to-green-200 shadow-lg flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Pool Image</span>
+                </div>
+              </div>
+              
+              {/* Text Card */}
+              <div className="bg-white shadow-lg overflow-hidden">
+              <div className='w-full h-[320px] bg-white'></div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
+                    AÇIQ VƏ QAPALI HOVUZLAR
+                  </h3>
+                  <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
+                    A San Valentino regala un'esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
+                  </p>
+                  <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
+                    <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
+                  </div>
+                  <div className="bg-[#BCB09C] px-4 py-2 text-center">
+                    <span className="text-white font-medium">Detaylı</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Naftalan Bath */}
+            <div className="relative">
+              {/* Image positioned above and to the left */}
+              <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
+                <div className="w-full h-full bg-gradient-to-br from-blue-200 to-green-200 shadow-lg flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Pool Image</span>
+                </div>
+              </div>
+              
+              {/* Text Card */}
+              <div className="bg-white shadow-lg overflow-hidden">
+              <div className='w-full h-[320px] bg-white'></div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
+                    AÇIQ VƏ QAPALI HOVUZLAR
+                  </h3>
+                  <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
+                    A San Valentino regala un'esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
+                  </p>
+                  <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
+                    <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
+                  </div>
+                  <div className="bg-[#BCB09C] px-4 py-2 text-center">
+                    <span className="text-white font-medium">Detaylı</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Paraffin Therapy */}
+            <div className="relative">
+              {/* Image positioned above and to the left */}
+              <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
+                <div className="w-full h-full bg-gradient-to-br from-blue-200 to-green-200 shadow-lg flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Pool Image</span>
+                </div>
+              </div>
+              
+              {/* Text Card */}
+              <div className="bg-white shadow-lg overflow-hidden">
+              <div className='w-full h-[320px] bg-white'></div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#BCB09C] mb-4">
+                    AÇIQ VƏ QAPALI HOVUZLAR
+                  </h3>
+                  <p className="text-sm text-[#8B7355] leading-relaxed mb-4">
+                    A San Valentino regala un'esperienza davvero unica! Una notte in Camera Comfort con balcone fronte Capri, con prima colazione, SPA e cena ad un prezzo davvero speciale!
+                  </p>
+                  <div className="bg-[#F5F5DC] px-4 py-2 mb-3">
+                    <span className="text-lg font-semibold text-[#BCB09C]">429,00 euro</span>
+                  </div>
+                  <div className="bg-[#BCB09C] px-4 py-2 text-center">
+                    <span className="text-white font-medium">Detaylı</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
 
       {/* Sticky Booking Panel (Bottom) */}

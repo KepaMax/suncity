@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="mt-20">
+    <footer className="mb-26">
       {/* Main Footer Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[400px]">
         {/* Left Section - Contact Information */}
