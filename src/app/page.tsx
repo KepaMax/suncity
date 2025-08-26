@@ -67,7 +67,7 @@ export default function ItinerariPage() {
                 <h2 className="text-3xl mb-5 font-regular w-full text-[#3A2C0C]">
                   İstirahətiniz bizim peşəkarlığımızdır!
                 </h2>
-                {/* 
+{/* 
                 <div className='flex-row justify-center items-end bg-green-400 w-full'>
                   <div className="w-2 h-2 rounded-full bg-[#BCB09C] mt-3 flex-shrink-0"></div>
                 </div> */}
