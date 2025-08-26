@@ -97,11 +97,14 @@ export default function RootLayout({
         <header className={`fixed h-8 top-0 inset-x-0 bg-[#BCB09C]/90 px-4 py-1 z-50 flex justify-end items-center transition-all duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
           <button
             onClick={toggleDrawer}
-            className="relative size-8 cursor-pointer text-white hover:text-gray-300 transition-colors drawer-toggle"
+            className="relative size-8 cursor-pointer text-white hover:text-gray-300 transition-all duration-300 drawer-toggle"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+            <div className="relative w-6 h-6">
+              {/* Hamburger lines */}
+              <span className={`absolute top-1 left-0 w-6 h-[3px] bg-current rounded-full transition-all duration-200 ease-in-out ${isDrawerOpen ? 'rotate-45 translate-y-[6px]' : ''}`}></span>
+              <span className={`absolute top-3 left-0 w-6 h-[3px] bg-current rounded-full transition-all duration-200 ease-in-out ${isDrawerOpen ? 'opacity-0 scale-x-0' : ''}`}></span>
+              <span className={`absolute top-5 left-0 w-6 h-[3px] bg-current rounded-full transition-all duration-200 ease-in-out ${isDrawerOpen ? '-rotate-45 -translate-y-[10px]' : ''}`}></span>
+            </div>
           </button>
         </header>
 
@@ -109,30 +112,16 @@ export default function RootLayout({
         <div className={`fixed inset-0 z-50 transition-opacity duration-300 ${isDrawerOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50"
+            className="absolute inset-0 bg-black/30"
             onClick={toggleDrawer}
           ></div>
 
           {/* Drawer */}
-          <div className={`absolute right-0 top-0 h-full w-full lg:w-[560px] bg-white transform transition-transform duration-300 ease-out drawer-content ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-            {/* Drawer Header */}
-            <div className="bg-[#BCB09C] h-8 flex items-center justify-between px-6">
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={toggleDrawer}
-                  className="text-white hover:text-gray-300 transition-colors"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-                <span className="text-white text-lg">menu</span>
-              </div>
+          <div className={`absolute right-8 top-16 h-[calc(100%-8rem)] w-full lg:w-[560px] bg-white transform transition-transform duration-300 ease-out drawer-content shadow-2xl border border-gray-100 ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}>
 
-            </div>
 
             {/* Drawer Content */}
-            <div className="flex h-[calc(100%-2rem)]">
+            <div className="flex h-full">
               {/* Navigation Links */}
               <div className="w-full lg:w-1/2 p-8">
                 <nav className="space-y-6">
