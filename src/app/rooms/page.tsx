@@ -195,7 +195,7 @@ export default function RoomsPage() {
         <Image className="block mx-auto" src="/images/logo_small.png" alt="Francischiello Logo" width={471} height={247} />
       </Link>
 
-      <Image className="object-cover" src="/images/main.png" alt="francischiello_itinerari_top" fill />
+      <Image className="object-cover" src="/images/lobbi-bar.jpg" alt="francischiello_itinerari_top" fill />
       <div className="absolute inset-0 bg-black/20"></div>
 
       <div className="absolute inset-0 grid place-items-center text-center">

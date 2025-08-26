@@ -113,7 +113,7 @@ export default function RootLayout({
           {/* Drawer */}
           <div className={`absolute right-0 top-0 h-full w-full lg:w-[560px] bg-white transform transition-transform duration-300 ease-out drawer-content ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}>
             {/* Drawer Header */}
-            <div className="bg-zinc-700 h-8 flex items-center justify-between px-6">
+            <div className="bg-[#BCB09C] h-8 flex items-center justify-between px-6">
               <div className="flex items-center gap-4">
                 <button
                   onClick={toggleDrawer}
@@ -125,10 +125,7 @@ export default function RootLayout({
                 </button>
                 <span className="text-white text-lg">menu</span>
               </div>
-              <div className="flex items-center gap-4 text-white">
-                <span className="border-r border-white/30 pr-4">IT</span>
-                <span>EN</span>
-              </div>
+
             </div>
 
             {/* Drawer Content */}
