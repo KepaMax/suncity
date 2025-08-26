@@ -229,16 +229,16 @@ export default function ServicesPage() {
             <section className='relative h-screen bg-[#F8F8F8] py-20'>
                 <div className="max-w-[85%] mx-auto px-8">
                     <div className="grid relative grid-cols-3 gap-15 w ">
-                    <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-30">
-                    <div className="flex flex-col gap-2">
-                        <button className="w-12 h-12 bg-[#8B7355] rounded-full flex items-center justify-center  hover:bg-[#60470F] transition-colors duration-200">
-                            <Icon icon="mdi:arrow-left" className="w-5 h-5 text-white" />
-                        </button>
-                        <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center  hover:bg-gray-100 transition-colors duration-200 border border-[#ECE7DF]">
-                            <Icon icon="mdi:arrow-right" className="w-5 h-5 text-[#8B7355]" />
-                        </button>
-                    </div>
-                </div>
+                        <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-30">
+                            <div className="flex flex-col gap-2">
+                                <button className="w-12 h-12 bg-[#8B7355] rounded-full flex items-center justify-center  hover:bg-[#60470F] transition-colors duration-200">
+                                    <Icon icon="mdi:arrow-left" className="w-5 h-5 text-white" />
+                                </button>
+                                <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center  hover:bg-gray-100 transition-colors duration-200 border border-[#ECE7DF]">
+                                    <Icon icon="mdi:arrow-right" className="w-5 h-5 text-[#8B7355]" />
+                                </button>
+                            </div>
+                        </div>
                         {/* Card 1: Open and Closed Pools */}
                         <div className="relative bg-[#ECE7DF] ">
                             {/* Image positioned above and to the left */}

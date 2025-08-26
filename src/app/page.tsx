@@ -67,7 +67,7 @@ export default function ItinerariPage() {
                 <h2 className="text-3xl mb-5 font-regular w-full text-[#3A2C0C]">
                   İstirahətiniz bizim peşəkarlığımızdır!
                 </h2>
-{/* 
+                {/* 
                 <div className='flex-row justify-center items-end bg-green-400 w-full'>
                   <div className="w-2 h-2 rounded-full bg-[#BCB09C] mt-3 flex-shrink-0"></div>
                 </div> */}
@@ -368,24 +368,6 @@ export default function ItinerariPage() {
               <div className="flex-1 h-px bg-[#BCB09C]"></div>
               <div className="w-2 h-2 bg-[#BCB09C] rounded-full ml-4"></div>
             </div>
-
-            {/* Navigation */}
-            <div className="flex items-center gap-4">
-              <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button className="w-8 h-8 rounded-full border border-[#BCB09C] flex items-center justify-center hover:bg-[#BCB09C] hover:text-white transition-colors">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              <div className="flex gap-2">
-                <div className="w-2 h-2 bg-[#BCB09C] rounded-full"></div>
-                <div className="w-2 h-2 border border-[#BCB09C] rounded-full"></div>
-              </div>
-            </div>
           </div>
 
           {/* Three Offer Cards */}
@@ -456,6 +438,17 @@ export default function ItinerariPage() {
 
             {/* Card 3: Paraffin Therapy */}
             <div className="relative">
+
+              <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-30">
+                <div className="flex flex-col gap-2">
+                  <button className="w-12 h-12 bg-[#8B7355] rounded-full flex items-center justify-center  hover:bg-[#60470F] transition-colors duration-200">
+                    <Icon icon="mdi:arrow-left" className="w-5 h-5 text-white" />
+                  </button>
+                  <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center  hover:bg-gray-100 transition-colors duration-200 border border-[#ECE7DF]">
+                    <Icon icon="mdi:arrow-right" className="w-5 h-5 text-[#8B7355]" />
+                  </button>
+                </div>
+              </div>
               {/* Image positioned above and to the left */}
               <div className="absolute -top-8 -left-8 h-[320px] w-full z-20">
                 <Image src="/images/specialOffers-3.jpg" alt="Sun City Pool" fill className="object-cover" />
@@ -482,6 +475,55 @@ export default function ItinerariPage() {
                   <div className=" border-[1px] border-white px-4 py-2 text-center">
                     <span className="text-[#3A2C0C] text-lg font-medium">Detaylı</span>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='relative my-20 px-8' style={{ height: '60vh' }}>
+        {/* <div className='w-[40%] h-full absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto px-8'>
+          <Image src="/images/rooms-1-1.png" alt="room" fill />
+        </div> */}
+        <div className='w-full h-full grid grid-cols-4'>
+          {/* <div className='w-[40%] h-full absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto px-8'>
+            <Image src="/images/rooms-1-1.png" alt="room" fill />
+          </div> */}
+          <div className='col-span-1 relative b flex justify-center items-center h-full'>
+            <div className='w-full h-full flex justify-center items-center '>
+              <div className='w-full h-[60%] flex flex-col justify-between bg-[#C6BFB2] p-4'>
+                <div className='flex flex-col justify-between items-center'>
+                  <span className='text-3xl font-bold w-full text-start text-white'>Delux Queen</span>
+                  <span className='text-2xl font-bold w-full text-end mt-6 text-white'>Delux Queen</span>
+                </div>
+                <div className="">
+                  <div className="flex flex-col gap-2">
+                    <button className="w-12 h-12 bg-[#8B7355] rounded-full flex items-center justify-center  hover:bg-[#60470F] transition-colors duration-200">
+                      <Icon icon="mdi:arrow-left" className="w-5 h-5 text-white" />
+                    </button>
+                    <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center  hover:bg-gray-100 transition-colors duration-200 border border-[#ECE7DF]">
+                      <Icon icon="mdi:arrow-right" className="w-5 h-5 text-[#8B7355]" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-span-2 '>
+            <Image src="/images/rooms-1-1.png"
+              alt="room"
+              width={1000}
+              height={1000}
+              className="w-full h-full object-cover" />
+          </div>
+          <div className='col-span-1'>
+            <div className='w-full h-full flex flex-col justify-between relative p-4'>
+              <div className='bg-white h-[60%] w-full absolute top-1/2 -translate-y-1/2 -left-10'>
+                <div className="absolute -bottom-6 -right-6 z-30">
+                  <button className="bg-[#C6BFB2] w-[70px] h-[70px] rounded-full shadow-2xl flex flex-col items-center justify-center hover:bg-white hover:text-[#C6BFB2] transition-all duration-300 hover:scale-105 border border-gray-100">
+                    <span className="text-[20px] font-normal text-white hover:text-[#C6BFB2]">More</span>
+                  </button>
                 </div>
               </div>
             </div>
