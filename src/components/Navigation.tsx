@@ -37,7 +37,7 @@ export default function Navigation({ logo, logoText = "LOGO" }: NavigationProps)
         {logo ? (
           <img src={logo} alt="Suncity Hotel Logo" className="h-10 w-auto" />
         ) : (
-          <div className="text-white text-xl font-bold font-serif">{logoText}</div>
+          <div className="text-white text-xl font-bold">{logoText}</div>
         )}
       </div>
       

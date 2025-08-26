@@ -93,7 +93,7 @@ export default function ItinerariPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <span className="text-white font-serif text-lg">menu</span>
+              <span className="text-white text-lg">menu</span>
             </div>
             <div className="flex items-center gap-4 text-white">
               <span className="border-r border-white/30 pr-4">IT</span>
@@ -106,18 +106,18 @@ export default function ItinerariPage() {
             {/* Navigation Links */}
             <div className="w-full lg:w-1/2 p-8">
               <nav className="space-y-6">
-                <a href="/" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">HOME</a>
-                <a href="/hotel" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">HOTEL</a>
-                <a href="/camere" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">CAMERE</a>
-                <a href="/ristorante" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">RISTORANTE</a>
-                <a href="/piscina" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">PISCINA</a>
-                <a href="/cerimonie" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">CERIMONIE</a>
-                <a href="/benessere" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">BENESSERE</a>
-                <a href="/itinerari" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">ITINERARI</a>
-                <a href="/offerte-speciali" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">OFFERTE SPECIALI</a>
-                <a href="/contatti" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">CONTATTI</a>
-                <a href="/privacy-policy" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">PRIVACY</a>
-                <a href="/cookie-policy" className="block text-zinc-700 hover:text-zinc-900 font-serif text-xl transition-colors">COOKIE</a>
+                <a href="/" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">HOME</a>
+                <a href="/hotel" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">HOTEL</a>
+                <a href="/camere" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">CAMERE</a>
+                <a href="/ristorante" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">RISTORANTE</a>
+                <a href="/piscina" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">PISCINA</a>
+                <a href="/cerimonie" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">CERIMONIE</a>
+                <a href="/benessere" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">BENESSERE</a>
+                <a href="/itinerari" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">ITINERARI</a>
+                <a href="/offerte-speciali" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">OFFERTE SPECIALI</a>
+                <a href="/contatti" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">CONTATTI</a>
+                <a href="/privacy-policy" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">PRIVACY</a>
+                <a href="/cookie-policy" className="block text-zinc-700 hover:text-zinc-900 text-xl transition-colors">COOKIE</a>
               </nav>
             </div>
 
@@ -270,31 +270,37 @@ export default function ItinerariPage() {
         <section className="relative mx-8 py-20 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 items-center max-w-7xl mx-auto">
             {/* Left side - Hotel Image */}
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl lg:col-span-3">
+            <div className="relative overflow-hidden  shadow-2xl lg:col-span-3">
               <Image
                 src="/images/hotel-lobby.png"
                 alt="Sun City Hotel Lobby"
                 width={800}
                 height={700}
-                className="w-full h-auto object-cover rounded-2xl"
+                className="w-full h-auto object-cover"
               />
             </div>
 
             {/* Right side - Hotel Description */}
             <div className="space-y-10 lg:col-span-2">
-              <h2 className="text-5xl font-bold text-[#BCB09C] leading-tight">
-                İstirahətiniz bizim peşəkarlığımızdır!
-              </h2>
-
-              <div className="space-y-8 text-gray-800">
-                <div className="flex items-start gap-3">
+              <div className="flex items-end justify-end flex-col">
+                <h2 className="text-3xl font-regular w-full text-[#3A2C0C]">
+                  İstirahətiniz bizim peşəkarlığımızdır!
+                </h2>
+{/* 
+                <div className='flex-row justify-center items-end bg-green-400 w-full'>
                   <div className="w-2 h-2 rounded-full bg-[#BCB09C] mt-3 flex-shrink-0"></div>
+                </div> */}
+                <div className="bg-zinc-700 mt-2 h-px w-full"></div>
+              </div>
+
+              <div className=" text-gray-800">
+                <div className="flex items-start gap-3">
                   <p className="text-lg leading-relaxed">
                     "Sun City Hotel Spa Naftalan" 5 mərtəbəli binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir.
                   </p>
                 </div>
 
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg mt-8 leading-relaxed">
                   Müalicə və sağlamlıq kompleksində müxtəlif kateqoriyalarda 95 otel otağı var. Müalicə əsasən Naftalan yağı ilə aparılır, əlavə olaraq fizioterapevtik prosedurlar tətbiq edilir. Bakıya (H. Əliyev Beynəlxalq Hava Limanı) - 340 km, Gəncə Hava Limanına - 50 km, Goran dəmir yolu stansiyasına - 20 km məsafədə yerləşir.
                 </p>
               </div>
@@ -309,7 +315,7 @@ export default function ItinerariPage() {
         <section className="mt-12 max-w-6xl mx-auto grid gap-12">
           <div className="relative px-4 group">
             <div className="relative">
-              <h3 className="font-serif text-zinc-700 px-4 text-2xl uppercase">
+              <h3 className="text-zinc-700 px-4 text-2xl uppercase">
                 Costiera amalfitana
               </h3>
             </div>
@@ -329,7 +335,7 @@ export default function ItinerariPage() {
 
           <div className="relative px-4 group">
             <div className="relative">
-              <h3 className="font-serif text-zinc-700 px-4 text-2xl uppercase">
+              <h3 className="text-zinc-700 px-4 text-2xl uppercase">
                 Pompei
               </h3>
             </div>
@@ -349,7 +355,7 @@ export default function ItinerariPage() {
 
           <div className="relative px-4 group">
             <div className="relative">
-              <h3 className="font-serif text-zinc-700 px-4 text-2xl uppercase">
+              <h3 className="text-zinc-700 px-4 text-2xl uppercase">
                 Napoli
               </h3>
             </div>
@@ -380,7 +386,7 @@ export default function ItinerariPage() {
             className="object-cover"
           />
         </div>
-        
+
         {/* Content Overlay */}
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto px-8">
@@ -395,70 +401,70 @@ export default function ItinerariPage() {
 
       <Footer />
 
-             {/* Sticky Booking Panel (Bottom) */}
-       <div className="fixed bottom-0 w-full left-0 right-0 z-50 bg-[#BCB09C]/95 backdrop-blur px-3 lg:px-8 py-3 lg:py-2 shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
-         <div className="flex justify-between w-full mx-auto gap-5">
-           {/* Arrival Date */}
-           <div className="w-1/4">
-             <div className="text-white  text-[10px]  mb-1 text-left">Gəliş tarixi</div>
-             <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
-               <div className="flex items-center text-white gap-2">
-                 <span className="text-4xl font-bold">2</span>
-                 <div className="flex flex-col">
-                   <p className='text-sm uppercase'>avqust 2025</p>
-                   <p className='text-xs'>12:00</p>
-                 </div>
-               </div>
-               <Image src="/calendar_icon.svg" alt="calendar" width={24} height={24} />
-             </div>
-           </div>
-           
-           {/* Departure Date */}
-           <div className="w-1/4">
-             <div className="text-white text-[10px] mb-1 text-left">Çıxış tarixi</div>
-             <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
-               <div className="flex items-center text-white gap-2">
-                 <span className="text-4xl font-bold">3</span>
-                 <div className="flex flex-col">
-                   <p className='text-sm uppercase'>avqust 2025</p>
-                   <p className='text-xs'>12:00</p>
-                 </div>
-               </div>
-               <Image src="/calendar_icon.svg" alt="calendar" width={24} height={24} />
-             </div>
-           </div>
-           
-           {/* Guests */}
-           <div className="w-1/4">
-             <div className="text-white text-[10px] mb-1 text-left">Qonaqlar</div>
-             <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
-               <div className="flex items-center text-white gap-2">
-                 <span className="text-4xl font-bold">2</span>
-                 <div className="flex flex-col">
-                   <p className='text-sm uppercase'>Böyük:</p>
-                   <p className='text-xs'>Uşaq:1</p>
-                 </div>
-               </div>
-               <Icon icon="mdi:chevron-down" className="w-6 h-6 text-white" />
-             </div>
-           </div>
-           
-           {/* Book Button */}
-           <div className="w-1/4">
-             <div className="h-6"></div> {/* Spacer to align with inputs */}
-             <div className="flex border border-[#F1F1F126] bg-white hover:bg-slate-200 transition-colors rounded-lg justify-center items-center px-3 py-2 gap-2 h-[52px]">
-               <span className="text-base font-bold">Rezervasiya et</span>
-             </div>
-             {/* Promo code link */}
-             <div className="flex justify-end mt-2">
-               <button className="flex items-center gap-2 text-white/90 text-xs hover:text-slate-200 transition-colors">
-                 <Image src="/promo_code_icon.svg" alt="promo_code" width={16} height={16} />
-                 <span>promo kod</span>
-               </button>
-             </div>
-           </div>
-         </div>
-       </div>
+      {/* Sticky Booking Panel (Bottom) */}
+      <div className="fixed bottom-0 w-full left-0 mt-10 right-0 z-50 bg-[#BCB09C]/95 backdrop-blur px-3 lg:px-8 py-3 lg:py-2 shadow-[0_-6px_20px_rgba(0,0,0,0.15)]">
+        <div className="flex justify-between w-full mx-auto gap-5">
+          {/* Arrival Date */}
+          <div className="w-1/4">
+            <div className="text-white  text-[10px]  mb-1 text-left">Gəliş tarixi</div>
+            <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
+              <div className="flex items-center text-white gap-2">
+                <span className="text-4xl font-bold">2</span>
+                <div className="flex flex-col">
+                  <p className='text-sm uppercase'>avqust 2025</p>
+                  <p className='text-xs'>12:00</p>
+                </div>
+              </div>
+              <Image src="/calendar_icon.svg" alt="calendar" width={24} height={24} />
+            </div>
+          </div>
+
+          {/* Departure Date */}
+          <div className="w-1/4">
+            <div className="text-white text-[10px] mb-1 text-left">Çıxış tarixi</div>
+            <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
+              <div className="flex items-center text-white gap-2">
+                <span className="text-4xl font-bold">3</span>
+                <div className="flex flex-col">
+                  <p className='text-sm uppercase'>avqust 2025</p>
+                  <p className='text-xs'>12:00</p>
+                </div>
+              </div>
+              <Image src="/calendar_icon.svg" alt="calendar" width={24} height={24} />
+            </div>
+          </div>
+
+          {/* Guests */}
+          <div className="w-1/4">
+            <div className="text-white text-[10px] mb-1 text-left">Qonaqlar</div>
+            <div className="flex border border-[#F1F1F126] rounded-lg items-center px-3 py-2 justify-between gap-2">
+              <div className="flex items-center text-white gap-2">
+                <span className="text-4xl font-bold">2</span>
+                <div className="flex flex-col">
+                  <p className='text-sm uppercase'>Böyük:</p>
+                  <p className='text-xs'>Uşaq:1</p>
+                </div>
+              </div>
+              <Icon icon="mdi:chevron-down" className="w-6 h-6 text-white" />
+            </div>
+          </div>
+
+          {/* Book Button */}
+          <div className="w-1/4">
+            <div className="h-6"></div> {/* Spacer to align with inputs */}
+            <div className="flex border border-[#F1F1F126] bg-white hover:bg-slate-200 transition-colors rounded-lg justify-center items-center px-3 py-2 gap-2 h-[52px]">
+              <span className="text-base font-bold">Rezervasiya et</span>
+            </div>
+            {/* Promo code link */}
+            <div className="flex justify-end mt-2">
+              <button className="flex items-center gap-2 text-white/90 text-xs hover:text-slate-200 transition-colors">
+                <Image src="/promo_code_icon.svg" alt="promo_code" width={16} height={16} />
+                <span>promo kod</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </>
   );

@@ -64,11 +64,11 @@ export default function HeroSection({
         </div>
 
         {/* Main Logo Text */}
-        <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wider mb-2 font-serif">
+        <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wider mb-2">
           Suncity Hotel & Spa
         </h1>
         
-        <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-wider mb-4 font-serif">
+        <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-wider mb-4">
           Naftalan
         </h2>
 
@@ -98,10 +98,10 @@ export default function HeroSection({
 
       {/* Bottom White Section Preview */}
       <div className="absolute bottom-0 left-0 right-0 bg-white py-8 text-center shadow-lg">
-        <h4 className="text-[#8B7355] text-xl md:text-2xl font-serif uppercase tracking-wide mb-2">
+        <h4 className="text-[#8B7355] text-xl md:text-2xl uppercase tracking-wide mb-2">
           Sun City Hotel & Spa Naftalan,
         </h4>
-        <h5 className="text-[#8B7355] text-2xl md:text-3xl font-serif uppercase font-bold tracking-wide">
+        <h5 className="text-[#8B7355] text-2xl md:text-3xl uppercase font-bold tracking-wide">
           Naftalan
         </h5>
       </div>
