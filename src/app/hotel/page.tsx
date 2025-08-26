@@ -84,11 +84,11 @@ export default function HotelPage() {
                 </div>
                 
                 <p className="text-sm sm:text-base text-[#8B7355] leading-relaxed mb-4">
-                  "SunCity Hotel Spa Naftalan" Naftalan, Azərbaycanda yerləşən unikal təbii müalicə yerdir. 5 mərtəbəli müasir binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir və müxtəlif qonaq ehtiyacları və rahatlıq səviyyələrinə uyğun 95 fərqli otaq kateqoriyası təqdim edir.
+                  &ldquo;SunCity Hotel Spa Naftalan&rdquo; Naftalan, Azərbaycanda yerləşən unikal təbii müalicə yerdir. 5 mərtəbəli müasir binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir və müxtəlif qonaq ehtiyacları və rahatlıq səviyyələrinə uyğun 95 fərqli otaq kateqoriyası təqdim edir.
                 </p>
                 
                 <p className="text-sm sm:text-base text-[#8B7355] leading-relaxed">
-                  Naftalanın sağaldıcı, rahatlıq və qonaqpərverliyini "SunCity Hotel Spa Naftalan"da yaşayın.
+                  Naftalanın sağaldıcı, rahatlıq və qonaqpərverliyini &ldquo;SunCity Hotel Spa Naftalan&rdquo;da yaşayın.
                 </p>
               </div>
             </div>
@@ -117,11 +117,11 @@ export default function HotelPage() {
                 </div>
                 
                 <p className="text-base lg:text-lg xl:text-xl text-[#8B7355] leading-relaxed mb-4 lg:mb-6">
-                  "SunCity Hotel Spa Naftalan" Naftalan, Azərbaycanda yerləşən unikal təbii müalicə yerdir. 5 mərtəbəli müasir binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir və müxtəlif qonaq ehtiyacları və rahatlıq səviyyələrinə uyğun 95 fərqli otaq kateqoriyası təqdim edir.
+                  &ldquo;SunCity Hotel Spa Naftalan&rdquo; Naftalan, Azərbaycanda yerləşən unikal təbii müalicə yerdir. 5 mərtəbəli müasir binada sakit və ya aktiv istirahət üçün lazım olan bütün şəraitlər təmin edilir. Otel ən son tibbi və texnoloji avadanlıqlarla təchiz edilib, peşəkar işçi və tibb bacısı tərəfindən xidmət göstərilir. Bu, müasir sağlamlıq kompleksidir və müxtəlif qonaq ehtiyacları və rahatlıq səviyyələrinə uyğun 95 fərqli otaq kateqoriyası təqdim edir.
                 </p>
                 
                 <p className="text-base lg:text-lg xl:text-xl text-[#8B7355] leading-relaxed">
-                  Naftalanın sağaldıcı, rahatlıq və qonaqpərverliyini "SunCity Hotel Spa Naftalan"da yaşayın.
+                  Naftalanın sağaldıcı, rahatlıq və qonaqpərverliyini &ldquo;SunCity Hotel Spa Naftalan&rdquo;da yaşayın.
                 </p>
               </div>
             </div>
