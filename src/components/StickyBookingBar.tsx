@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Icon } from "@iconify/react";
+import Link from 'next/link';
 
 interface StickyBookingBarProps {
   className?: string;
@@ -118,9 +119,9 @@ export default function StickyBookingBar({
           {/* Book Button */}
           <div className="w-1/4">
             <div className="h-6"></div> {/* Spacer to align with inputs */}
-            <div className="flex border border-[#F1F1F126] bg-white hover:bg-slate-200 transition-colors rounded-lg justify-center items-center px-3 py-2 gap-2 h-[52px] cursor-pointer" onClick={handleBookNow}>
+            <Link href="/reservation" className="flex border border-[#F1F1F126] bg-white hover:bg-slate-200 transition-colors rounded-lg justify-center items-center px-3 py-2 gap-2 h-[52px] cursor-pointer" onClick={handleBookNow}>
               <span className="text-base font-bold">Rezervasiya et</span>
-            </div>
+            </Link>
             {/* Promo code link */}
             {showPromoCode && (
               <div className="flex justify-end mt-2">
